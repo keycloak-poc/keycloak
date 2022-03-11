@@ -22,51 +22,33 @@ permissions:
   security-events: write
 
 jobs:
-  analyze:
-    name: Analyze
-    runs-on: ubuntu-latest
+  CodeQL-analyze-themes:
 
-    strategy:
-      fail-fast: false
-      matrix:
-        # Override automatic language detection by changing the below list
-        # Supported options are ['csharp', 'cpp', 'go', 'java', 'javascript', 'python']
-        language: ['java', 'javascript']
-        # Learn more...
-        # https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#overriding-automatic-language-detection
+    name: CodeQL analyze themes
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install CodeQL
-      run: ${GITHUB_WORKSPACE}/.github/scripts/codeql/codeql-install.sh
-    
     - uses: actions/setup-java@v2
-      if: ${{ matrix.language == 'java' }}
       with:
-        distribution: 'temurin'
         java-version: '11'
 
     - name: Update maven settings
       run: mkdir -p ~/.m2 ; cp .github/settings.xml ~/.m2/
 
-    # Create the codeql database for Java
-    - name: Create CodeQL Java database
-      if: ${{ matrix.language == 'java' }}
-      run: ${GITHUB_WORKSPACE}/.github/scripts/codeql/codeql-database-create.sh java
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: javascript
+        source-root: themes/
 
-    # Run the analysis for Java
-    - name: Run CodeQL analysis for Java
-      if: ${{ matrix.language == 'java' }}
-      run: ${GITHUB_WORKSPACE}/.github/scripts/codeql/codeql-analyze.sh java
-        
     # Create the codeql database for JavaScript
-    - name: Create CodeQL JavaScript database
-      if: ${{ matrix.language == 'javascript' }}
-      run: ${GITHUB_WORKSPACE}/.github/scripts/codeql/codeql-database-create.sh javascript
+    - name: Build Keycloak themes
+      run: mvn install -Dmaven.test.skip -DskipQuarkus -DskipTestsuite -DskipExamples -DskipTests
 
-    # Run the analysis for JavaScript
-    - name: Run CodeQL analysis for JavaScript
-      if: ${{ matrix.language == 'javascript' }}
-      run: ${GITHUB_WORKSPACE}/.github/scripts/codeql/codeql-analyze.sh javascript
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
+      env: 
+        CODEQL_ACTION_EXTRA_OPTIONS: '{"database":{"interpret-results":["--max-paths",1]}}'
