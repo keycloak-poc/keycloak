@@ -1,11 +1,6 @@
 name: Keycloak CI
 
-on:
-  push:
-    branches-ignore: [main]
-  pull_request:
-  schedule:
-    - cron: '0 0 * * *'
+on: [push, pull_request]
 
 env:
   DEFAULT_JDK_VERSION: 11
