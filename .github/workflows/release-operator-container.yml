@@ -28,6 +28,35 @@ jobs:
         run: |
           mvn -P operator -pl operator -am clean install -DskipTests            
 
+      - name: Login to Quay
+        uses: docker/login-action@v2
+        with:
+          registry: quay.io
+          username: ${{ secrets.QUAY_USERNAME }}
+          password: ${{ secrets.QUAY_TOKEN }}
+
+      - name: Container metadata
+        id: meta_quay
+        uses: docker/metadata-action@v4
+        with:
+          images: abstractj/keycloak-operator
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}          
+
+      - name: Build the operator Docker image
+        working-directory: operator
+        run: |
+          echo "${{ steps.meta_quay.outputs.tags }}" | xargs -I {} \
+          mvn clean package \
+              -DskipTests \
+              -Dquarkus.container-image.image={} \
+              -Dquarkus.container-image.build=true \
+              -Dquarkus.container-image.push=true \
+              -Dquarkus.container-image.registry=quay.io
+              -Dquarkus.container-image.group=abstractj
+
       - name: Login to Docker
         uses: docker/login-action@v2
         with:
@@ -55,30 +84,3 @@ jobs:
               -Dquarkus.container-image.push=true \
               -Dquarkus.container-image.group=abstractj
       
-      - name: Login to Quay
-        uses: docker/login-action@v2
-        with:
-          registry: quay.io
-          username: ${{ secrets.QUAY_USERNAME }}
-          password: ${{ secrets.QUAY_TOKEN }}
-
-      - name: Container metadata
-        id: meta_quay
-        uses: docker/metadata-action@v4
-        with:
-          images: abstractj/keycloak-operator
-          tags: |
-            type=ref,event=branch
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}          
-
-      - name: Build the operator Docker image
-        working-directory: operator
-        run: |
-          echo "${{ steps.meta_quay.outputs.tags }}" | xargs -I {} \
-          mvn clean package \
-              -DskipTests \
-              -Dquarkus.container-image.image={} \
-              -Dquarkus.container-image.build=true \
-              -Dquarkus.container-image.push=true \
-              -Dquarkus.container-image.group=abstractj
