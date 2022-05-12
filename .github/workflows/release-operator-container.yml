@@ -18,16 +18,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
-      - name: Container metadata
-        id: meta
-        uses: docker/metadata-action@v4
-        with:
-          images: abstractj/keycloak-operator
-          tags: |
-            type=ref,event=branch
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-      
       - uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
@@ -44,10 +34,20 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
+      - name: Container metadata
+        id: meta_docker
+        uses: docker/metadata-action@v4
+        with:
+          images: abstractj/keycloak-operator
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+
       - name: Build the operator Docker image
         working-directory: operator
         run: |
-          echo "${{ steps.meta.outputs.tags }}" | xargs -I {} \
+          echo "${{ steps.meta_docker.outputs.tags }}" | xargs -I {} \
           mvn clean package \
               -DskipTests \
               -Dquarkus.container-image.image={} \
@@ -62,10 +62,20 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_TOKEN }}
 
+      - name: Container metadata
+        id: meta_quay
+        uses: docker/metadata-action@v4
+        with:
+          images: abstractj/keycloak-operator
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}          
+
       - name: Build the operator Docker image
         working-directory: operator
         run: |
-          echo "${{ steps.meta.outputs.tags }}" | xargs -I {} \
+          echo "${{ steps.meta_quay.outputs.tags }}" | xargs -I {} \
           mvn clean package \
               -DskipTests \
               -Dquarkus.container-image.image={} \

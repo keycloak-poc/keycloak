@@ -21,7 +21,7 @@
         uses: docker/setup-buildx-action@v2
 
       - name: Quay Container metadata
-        id: meta
+        id: meta_quay
         uses: docker/metadata-action@v4
         with:
           images: quay.io/abstractj/keycloak
@@ -43,11 +43,11 @@
           context: quarkus/container
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}        
+          tags: ${{ steps.meta_quay.outputs.tags }}
+          labels: ${{ steps.meta_quay.outputs.labels }}        
         
       - name: Docker Container metadata
-        id: meta
+        id: meta_docker
         uses: docker/metadata-action@v4
         with:
           images: abstractj/keycloak
@@ -68,5 +68,5 @@
           context: quarkus/container
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta_docker.outputs.tags }}
+          labels: ${{ steps.meta_docker.outputs.labels }}
