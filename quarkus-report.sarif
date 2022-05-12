@@ -1,0 +1,645 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Snyk Open Source",
+          "rules": []
+        }
+      },
+      "results": []
+    },
+    {
+      "tool": {
+        "driver": {
+          "name": "Snyk Open Source",
+          "rules": [
+            {
+              "id": "SNYK-JAVA-ORGKEYCLOAK-1083276",
+              "shortDescription": {
+                "text": "Medium severity - User Impersonation vulnerability in org.keycloak:keycloak-core"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-3424) org.keycloak:keycloak-core@999-SNAPSHOT"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.keycloak:keycloak-core\n* Introduced through: org.keycloak:keycloak-quarkus-server-deployment@999-SNAPSHOT, org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and others\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server-deployment@999-SNAPSHOT › org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.keycloak:keycloak-core@999-SNAPSHOT\n# Overview\n[org.keycloak:keycloak-core](https://www.keycloak.org) is an open source identity and access management solution.\n\nAffected versions of this package are vulnerable to User Impersonation. Internationalized domain name (IDN) homograph attack to impersonate users.\n# Remediation\nThere is no fixed version for `org.keycloak:keycloak-core`.\n# References\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1933320)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-290",
+                  "maven"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-JAVA-ORGKEYCLOAK-1085642",
+              "shortDescription": {
+                "text": "Medium severity - Authorization Bypass vulnerability in org.keycloak:keycloak-core"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-20262) org.keycloak:keycloak-core@999-SNAPSHOT"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.keycloak:keycloak-core\n* Introduced through: org.keycloak:keycloak-quarkus-server-deployment@999-SNAPSHOT, org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and others\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server-deployment@999-SNAPSHOT › org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.keycloak:keycloak-core@999-SNAPSHOT\n# Overview\n[org.keycloak:keycloak-core](https://www.keycloak.org) is an open source identity and access management solution.\n\nAffected versions of this package are vulnerable to Authorization Bypass. Re-authentication does not occur while updating the password.\n# Remediation\nThere is no fixed version for `org.keycloak:keycloak-core`.\n# References\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1933639)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-285",
+                  "CWE-306",
+                  "maven"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-JAVA-ORGKEYCLOAK-1088339",
+              "shortDescription": {
+                "text": "Medium severity - Improper Access Control vulnerability in org.keycloak:keycloak-services"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-3461) org.keycloak:keycloak-services@999-SNAPSHOT"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.keycloak:keycloak-services\n* Introduced through: org.keycloak:keycloak-quarkus-server-deployment@999-SNAPSHOT, org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and others\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server-deployment@999-SNAPSHOT › org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.keycloak:keycloak-services@999-SNAPSHOT\n# Overview\n[org.keycloak:keycloak-services](https://mvnrepository.com/artifact/org.keycloak-poc/keycloak-services) is an open source identity and access management solution for modern applications and services.\n\nAffected versions of this package are vulnerable to Improper Access Control. Keycloak may fail to logout user session if the logout request comes from an external SAML identity provider and Principal Type is set to Attribute Name.\n# Remediation\nThere is no fixed version for `org.keycloak:keycloak-services`.\n# References\n- [GitHub Additional Information](https://github.com/keycloak-poc/keycloak/blob/master/services/src/main/java/org/keycloak/broker/saml/SAMLEndpoint.java)\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1941565)\n- [RedHat Issue](https://issues.redhat.com/browse/KEYCLOAK-17495)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-284",
+                  "maven"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-JAVA-ORGKEYCLOAK-1658295",
+              "shortDescription": {
+                "text": "Medium severity - Improper Authentication vulnerability in org.keycloak:keycloak-server-spi-private"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-3827) org.keycloak:keycloak-server-spi-private@999-SNAPSHOT"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.keycloak:keycloak-server-spi-private\n* Introduced through: org.keycloak:keycloak-quarkus-server-deployment@999-SNAPSHOT, org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and others\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server-deployment@999-SNAPSHOT › org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.keycloak:keycloak-server-spi-private@999-SNAPSHOT\n# Overview\n[org.keycloak:keycloak-server-spi-private](https://mvnrepository.com/artifact/org.keycloak-poc/keycloak-server-spi-private) is an open source identity and access management solution for modern applications and services.\n\nAffected versions of this package are vulnerable to Improper Authentication. For each SAML client it is possible to send an `AuthnRequest` message via SOAP with Basic Authorization header and Keycloak will successfully authenticate the user for the client and will not consider the authentication flow applied. The presence of the flow is hidden from the administrator, it is not possible to disable it in the client's configuration similarly as direct grant etc.\n# Remediation\nThere is no fixed version for `org.keycloak:keycloak-server-spi-private`.\n# References\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2007512)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-287",
+                  "maven"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-JAVA-ORGWILDFLYSECURITY-1316682",
+              "shortDescription": {
+                "text": "Medium severity - Timing Attack vulnerability in org.wildfly.security:wildfly-elytron"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-3642) org.wildfly.security:wildfly-elytron@1.15.3.Final"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.wildfly.security:wildfly-elytron\n* Introduced through: org.keycloak:keycloak-quarkus-server-deployment@999-SNAPSHOT, org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and others\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server-deployment@999-SNAPSHOT › org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.wildfly.security:wildfly-elytron@1.15.3.Final\n# Overview\n[org.wildfly.security:wildfly-elytron](https://wildfly-security.github.io/wildfly-elytron/) is a new WildFly sub-project which is completely replacing the combination of PicketBox and JAAS as the WildFly client and server security mechanism.\n\nAffected versions of this package are vulnerable to Timing Attack. Currently `org.wildfly.security.mechanism.scram.ScramServer` uses simple byte comparison to verify the message nonce and client proof. Simple byte comparison returns on the first mismatch and is therefore susceptible to timing attacks.\n# Remediation\nThere is no fixed version for `org.wildfly.security:wildfly-elytron`.\n# References\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1981407)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-208",
+                  "maven"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "SNYK-JAVA-ORGKEYCLOAK-1083276",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.keycloak:keycloak-core package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deployment/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-JAVA-ORGKEYCLOAK-1085642",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.keycloak:keycloak-core package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deployment/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-JAVA-ORGKEYCLOAK-1088339",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.keycloak:keycloak-services package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deployment/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-JAVA-ORGKEYCLOAK-1658295",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.keycloak:keycloak-server-spi-private package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deployment/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-JAVA-ORGWILDFLYSECURITY-1316682",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.wildfly.security:wildfly-elytron package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deployment/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tool": {
+        "driver": {
+          "name": "Snyk Open Source",
+          "rules": []
+        }
+      },
+      "results": []
+    },
+    {
+      "tool": {
+        "driver": {
+          "name": "Snyk Open Source",
+          "rules": [
+            {
+              "id": "SNYK-JAVA-ORGKEYCLOAK-1083276",
+              "shortDescription": {
+                "text": "Medium severity - User Impersonation vulnerability in org.keycloak:keycloak-core"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-3424) org.keycloak:keycloak-core@999-SNAPSHOT"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.keycloak:keycloak-core\n* Introduced through: org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and org.keycloak:keycloak-core@999-SNAPSHOT\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.keycloak:keycloak-core@999-SNAPSHOT\n# Overview\n[org.keycloak:keycloak-core](https://www.keycloak.org) is an open source identity and access management solution.\n\nAffected versions of this package are vulnerable to User Impersonation. Internationalized domain name (IDN) homograph attack to impersonate users.\n# Remediation\nThere is no fixed version for `org.keycloak:keycloak-core`.\n# References\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1933320)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-290",
+                  "maven"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-JAVA-ORGKEYCLOAK-1085642",
+              "shortDescription": {
+                "text": "Medium severity - Authorization Bypass vulnerability in org.keycloak:keycloak-core"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-20262) org.keycloak:keycloak-core@999-SNAPSHOT"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.keycloak:keycloak-core\n* Introduced through: org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and org.keycloak:keycloak-core@999-SNAPSHOT\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.keycloak:keycloak-core@999-SNAPSHOT\n# Overview\n[org.keycloak:keycloak-core](https://www.keycloak.org) is an open source identity and access management solution.\n\nAffected versions of this package are vulnerable to Authorization Bypass. Re-authentication does not occur while updating the password.\n# Remediation\nThere is no fixed version for `org.keycloak:keycloak-core`.\n# References\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1933639)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-285",
+                  "CWE-306",
+                  "maven"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-JAVA-ORGKEYCLOAK-1088339",
+              "shortDescription": {
+                "text": "Medium severity - Improper Access Control vulnerability in org.keycloak:keycloak-services"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-3461) org.keycloak:keycloak-services@999-SNAPSHOT"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.keycloak:keycloak-services\n* Introduced through: org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and org.keycloak:keycloak-services@999-SNAPSHOT\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.keycloak:keycloak-services@999-SNAPSHOT\n# Overview\n[org.keycloak:keycloak-services](https://mvnrepository.com/artifact/org.keycloak-poc/keycloak-services) is an open source identity and access management solution for modern applications and services.\n\nAffected versions of this package are vulnerable to Improper Access Control. Keycloak may fail to logout user session if the logout request comes from an external SAML identity provider and Principal Type is set to Attribute Name.\n# Remediation\nThere is no fixed version for `org.keycloak:keycloak-services`.\n# References\n- [GitHub Additional Information](https://github.com/keycloak-poc/keycloak/blob/master/services/src/main/java/org/keycloak/broker/saml/SAMLEndpoint.java)\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1941565)\n- [RedHat Issue](https://issues.redhat.com/browse/KEYCLOAK-17495)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-284",
+                  "maven"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-JAVA-ORGKEYCLOAK-1658295",
+              "shortDescription": {
+                "text": "Medium severity - Improper Authentication vulnerability in org.keycloak:keycloak-server-spi-private"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-3827) org.keycloak:keycloak-server-spi-private@999-SNAPSHOT"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.keycloak:keycloak-server-spi-private\n* Introduced through: org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and org.keycloak:keycloak-server-spi-private@999-SNAPSHOT\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.keycloak:keycloak-server-spi-private@999-SNAPSHOT\n# Overview\n[org.keycloak:keycloak-server-spi-private](https://mvnrepository.com/artifact/org.keycloak-poc/keycloak-server-spi-private) is an open source identity and access management solution for modern applications and services.\n\nAffected versions of this package are vulnerable to Improper Authentication. For each SAML client it is possible to send an `AuthnRequest` message via SOAP with Basic Authorization header and Keycloak will successfully authenticate the user for the client and will not consider the authentication flow applied. The presence of the flow is hidden from the administrator, it is not possible to disable it in the client's configuration similarly as direct grant etc.\n# Remediation\nThere is no fixed version for `org.keycloak:keycloak-server-spi-private`.\n# References\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2007512)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-287",
+                  "maven"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-JAVA-ORGWILDFLYSECURITY-1316682",
+              "shortDescription": {
+                "text": "Medium severity - Timing Attack vulnerability in org.wildfly.security:wildfly-elytron"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-3642) org.wildfly.security:wildfly-elytron@1.15.3.Final"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.wildfly.security:wildfly-elytron\n* Introduced through: org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and org.wildfly.security:wildfly-elytron@1.15.3.Final\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.wildfly.security:wildfly-elytron@1.15.3.Final\n# Overview\n[org.wildfly.security:wildfly-elytron](https://wildfly-security.github.io/wildfly-elytron/) is a new WildFly sub-project which is completely replacing the combination of PicketBox and JAAS as the WildFly client and server security mechanism.\n\nAffected versions of this package are vulnerable to Timing Attack. Currently `org.wildfly.security.mechanism.scram.ScramServer` uses simple byte comparison to verify the message nonce and client proof. Simple byte comparison returns on the first mismatch and is therefore susceptible to timing attacks.\n# Remediation\nThere is no fixed version for `org.wildfly.security:wildfly-elytron`.\n# References\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1981407)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-208",
+                  "maven"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "SNYK-JAVA-ORGKEYCLOAK-1083276",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.keycloak:keycloak-core package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "runtime/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-JAVA-ORGKEYCLOAK-1085642",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.keycloak:keycloak-core package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "runtime/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-JAVA-ORGKEYCLOAK-1088339",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.keycloak:keycloak-services package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "runtime/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-JAVA-ORGKEYCLOAK-1658295",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.keycloak:keycloak-server-spi-private package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "runtime/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-JAVA-ORGWILDFLYSECURITY-1316682",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.wildfly.security:wildfly-elytron package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "runtime/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tool": {
+        "driver": {
+          "name": "Snyk Open Source",
+          "rules": [
+            {
+              "id": "SNYK-JAVA-ORGKEYCLOAK-1083276",
+              "shortDescription": {
+                "text": "Medium severity - User Impersonation vulnerability in org.keycloak:keycloak-core"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-3424) org.keycloak:keycloak-core@999-SNAPSHOT"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.keycloak:keycloak-core\n* Introduced through: org.keycloak:keycloak-quarkus-server-app@999-SNAPSHOT, org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and others\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server-app@999-SNAPSHOT › org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.keycloak:keycloak-core@999-SNAPSHOT\n# Overview\n[org.keycloak:keycloak-core](https://www.keycloak.org) is an open source identity and access management solution.\n\nAffected versions of this package are vulnerable to User Impersonation. Internationalized domain name (IDN) homograph attack to impersonate users.\n# Remediation\nThere is no fixed version for `org.keycloak:keycloak-core`.\n# References\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1933320)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-290",
+                  "maven"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-JAVA-ORGKEYCLOAK-1085642",
+              "shortDescription": {
+                "text": "Medium severity - Authorization Bypass vulnerability in org.keycloak:keycloak-core"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-20262) org.keycloak:keycloak-core@999-SNAPSHOT"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.keycloak:keycloak-core\n* Introduced through: org.keycloak:keycloak-quarkus-server-app@999-SNAPSHOT, org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and others\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server-app@999-SNAPSHOT › org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.keycloak:keycloak-core@999-SNAPSHOT\n# Overview\n[org.keycloak:keycloak-core](https://www.keycloak.org) is an open source identity and access management solution.\n\nAffected versions of this package are vulnerable to Authorization Bypass. Re-authentication does not occur while updating the password.\n# Remediation\nThere is no fixed version for `org.keycloak:keycloak-core`.\n# References\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1933639)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-285",
+                  "CWE-306",
+                  "maven"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-JAVA-ORGKEYCLOAK-1088339",
+              "shortDescription": {
+                "text": "Medium severity - Improper Access Control vulnerability in org.keycloak:keycloak-services"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-3461) org.keycloak:keycloak-services@999-SNAPSHOT"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.keycloak:keycloak-services\n* Introduced through: org.keycloak:keycloak-quarkus-server-app@999-SNAPSHOT, org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and others\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server-app@999-SNAPSHOT › org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.keycloak:keycloak-services@999-SNAPSHOT\n# Overview\n[org.keycloak:keycloak-services](https://mvnrepository.com/artifact/org.keycloak-poc/keycloak-services) is an open source identity and access management solution for modern applications and services.\n\nAffected versions of this package are vulnerable to Improper Access Control. Keycloak may fail to logout user session if the logout request comes from an external SAML identity provider and Principal Type is set to Attribute Name.\n# Remediation\nThere is no fixed version for `org.keycloak:keycloak-services`.\n# References\n- [GitHub Additional Information](https://github.com/keycloak-poc/keycloak/blob/master/services/src/main/java/org/keycloak/broker/saml/SAMLEndpoint.java)\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1941565)\n- [RedHat Issue](https://issues.redhat.com/browse/KEYCLOAK-17495)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-284",
+                  "maven"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-JAVA-ORGKEYCLOAK-1658295",
+              "shortDescription": {
+                "text": "Medium severity - Improper Authentication vulnerability in org.keycloak:keycloak-server-spi-private"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-3827) org.keycloak:keycloak-server-spi-private@999-SNAPSHOT"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.keycloak:keycloak-server-spi-private\n* Introduced through: org.keycloak:keycloak-quarkus-server-app@999-SNAPSHOT, org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and others\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server-app@999-SNAPSHOT › org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.keycloak:keycloak-server-spi-private@999-SNAPSHOT\n# Overview\n[org.keycloak:keycloak-server-spi-private](https://mvnrepository.com/artifact/org.keycloak-poc/keycloak-server-spi-private) is an open source identity and access management solution for modern applications and services.\n\nAffected versions of this package are vulnerable to Improper Authentication. For each SAML client it is possible to send an `AuthnRequest` message via SOAP with Basic Authorization header and Keycloak will successfully authenticate the user for the client and will not consider the authentication flow applied. The presence of the flow is hidden from the administrator, it is not possible to disable it in the client's configuration similarly as direct grant etc.\n# Remediation\nThere is no fixed version for `org.keycloak:keycloak-server-spi-private`.\n# References\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2007512)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-287",
+                  "maven"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-JAVA-ORGWILDFLYSECURITY-1316682",
+              "shortDescription": {
+                "text": "Medium severity - Timing Attack vulnerability in org.wildfly.security:wildfly-elytron"
+              },
+              "fullDescription": {
+                "text": "(CVE-2021-3642) org.wildfly.security:wildfly-elytron@1.15.3.Final"
+              },
+              "help": {
+                "text": "",
+                "markdown": "* Package Manager: maven\n* Vulnerable module: org.wildfly.security:wildfly-elytron\n* Introduced through: org.keycloak:keycloak-quarkus-server-app@999-SNAPSHOT, org.keycloak:keycloak-quarkus-server@999-SNAPSHOT and others\n### Detailed paths\n* _Introduced through_: org.keycloak:keycloak-quarkus-server-app@999-SNAPSHOT › org.keycloak:keycloak-quarkus-server@999-SNAPSHOT › org.wildfly.security:wildfly-elytron@1.15.3.Final\n# Overview\n[org.wildfly.security:wildfly-elytron](https://wildfly-security.github.io/wildfly-elytron/) is a new WildFly sub-project which is completely replacing the combination of PicketBox and JAAS as the WildFly client and server security mechanism.\n\nAffected versions of this package are vulnerable to Timing Attack. Currently `org.wildfly.security.mechanism.scram.ScramServer` uses simple byte comparison to verify the message nonce and client proof. Simple byte comparison returns on the first mismatch and is therefore susceptible to timing attacks.\n# Remediation\nThere is no fixed version for `org.wildfly.security:wildfly-elytron`.\n# References\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1981407)\n"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "CWE-208",
+                  "maven"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "SNYK-JAVA-ORGKEYCLOAK-1083276",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.keycloak:keycloak-core package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "server/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-JAVA-ORGKEYCLOAK-1085642",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.keycloak:keycloak-core package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "server/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-JAVA-ORGKEYCLOAK-1088339",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.keycloak:keycloak-services package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "server/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-JAVA-ORGKEYCLOAK-1658295",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.keycloak:keycloak-server-spi-private package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "server/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-JAVA-ORGWILDFLYSECURITY-1316682",
+          "level": "warning",
+          "message": {
+            "text": "This file introduces a vulnerable org.wildfly.security:wildfly-elytron package with a medium severity vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "server/pom.xml"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

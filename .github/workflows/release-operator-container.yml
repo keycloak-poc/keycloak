@@ -12,7 +12,7 @@ env:
 
 jobs:
   publish:
-    if: github.repository == 'keycloak/keycloak'
+    if: github.repository == 'keycloak-poc/keycloak'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,20 +20,19 @@ jobs:
         
       - name: Container metadata
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v4
         with:
-          images: quay.io/keycloak/keycloak-operator
+          images: abstractj/keycloak-operator
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
 
-      - name: Login to Quay
-        uses: docker/login-action@v1
+      - name: Login to Docker
+        uses: docker/login-action@v2
         with:
-          registry: quay.io
-          username: ${{ secrets.QUAY_USERNAME }}
-          password: ${{ secrets.QUAY_TOKEN }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
 
       - uses: actions/setup-java@v3
         with:
