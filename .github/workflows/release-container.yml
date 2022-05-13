@@ -13,6 +13,9 @@
       steps:
       - name: Checkout
         uses: actions/checkout@v3
+        # TODO: remove
+        with:
+          repository: keycloak/keycloak
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -20,7 +23,7 @@
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Quay Container metadata
+      - name: Container metadata from Quay
         id: meta_quay
         uses: docker/metadata-action@v4
         with:
@@ -37,7 +40,7 @@
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_TOKEN }}
 
-      - name: Build and push to Quay
+      - name: Build and push the image to Quay
         uses: docker/build-push-action@v3
         with:
           context: quarkus/container
@@ -46,11 +49,11 @@
           tags: ${{ steps.meta_quay.outputs.tags }}
           labels: ${{ steps.meta_quay.outputs.labels }}        
         
-      - name: Docker Container metadata
+      - name: Container metadata from Docker
         id: meta_docker
         uses: docker/metadata-action@v4
         with:
-          images: abstractj/keycloak
+          images: keycloak/keycloak
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
@@ -62,7 +65,7 @@
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
-      - name: Build and push to Docker
+      - name: Push the image to Docker
         uses: docker/build-push-action@v3
         with:
           context: quarkus/container
