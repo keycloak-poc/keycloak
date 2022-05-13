@@ -52,6 +52,8 @@ jobs:
           echo "${{ steps.meta_quay.outputs.tags }}" | xargs -I {} \
           mvn clean package \
               -DskipTests \
+              -Dquarkus.container-image.username=${{ secrets.QUAY_USERNAME }} \
+              -Dquarkus.container-image.password=${{ secrets.QUAY_TOKEN }} \
               -Dquarkus.container-image.image={} \
               -Dquarkus.container-image.build=true \
               -Dquarkus.container-image.push=true \
@@ -81,6 +83,8 @@ jobs:
           echo "${{ steps.meta_docker.outputs.tags }}" | xargs -I {} \
           mvn clean package \
               -DskipTests \
+              -Dquarkus.container-image.username=${{ secrets.DOCKER_USERNAME }} \
+              -Dquarkus.container-image.password=${{ secrets.DOCKER_TOKEN }} \
               -Dquarkus.container-image.image={} \
               -Dquarkus.container-image.build=true \
               -Dquarkus.container-image.push=true \
