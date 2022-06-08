@@ -1,8 +1,7 @@
 name: "Snyk"
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
+  [pull_request, push]
 
 env:
   DEFAULT_JDK_VERSION: 11
