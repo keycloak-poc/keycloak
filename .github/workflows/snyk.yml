@@ -31,7 +31,7 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - name: Upload scanner results to GitHub
-        uses: github/codeql-action/upload-sarif@v2.1.11
+        uses: github/codeql-action/upload-sarif@v2.1.14
         with:
           sarif_file: quarkus-report.sarif
 
@@ -59,6 +59,6 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - name: Upload scanner results for the Operator to GitHub
-        uses: github/codeql-action/upload-sarif@v2.1.11
+        uses: github/codeql-action/upload-sarif@v2.1.14
         with:
           sarif_file: operator-report.sarif
