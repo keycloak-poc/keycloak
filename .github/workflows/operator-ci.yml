@@ -2,7 +2,6 @@ name: Keycloak Operator CI
 
 on:
   push:
-    branches-ignore: [main]
   pull_request:
     paths-ignore:
       - '.github/workflows/**'
