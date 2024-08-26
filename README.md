@@ -1,9 +1,10 @@
-![Keycloak](https://github.com/keycloak/keycloak-misc/blob/main/logo/logo.svg)
+![Keycloak](https://github.com/keycloak/keycloak-poc-misc/blob/main/logo/logo.svg)
 
-![GitHub Release](https://img.shields.io/github/v/release/keycloak/keycloak?label=latest%20release)
+![GitHub Release](https://img.shields.io/github/v/release/keycloak/keycloak-poc?label=latest%20release)
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/6818/badge)](https://bestpractices.coreinfrastructure.org/projects/6818)
-![GitHub Repo stars](https://img.shields.io/github/stars/keycloak/keycloak?style=flat)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/keycloak/keycloak)
+![GitHub Repo stars](https://img.shields.io/github/stars/keycloak/keycloak-poc?style=flat)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/keycloak/keycloak-poc)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/keycloak/keycloak-poc/badge)](https://scorecard.dev/viewer/?uri=github.com/keycloak/keycloak-poc)
 
 
 # Open Source Identity and Access Management
@@ -21,12 +22,12 @@ Keycloak provides user federation, strong authentication, user management, fine-
 
 ## Reporting Security Vulnerabilities
 
-If you have found a security vulnerability, please look at the [instructions on how to properly report it](https://github.com/keycloak/keycloak/security/policy).
+If you have found a security vulnerability, please look at the [instructions on how to properly report it](https://github.com/keycloak/keycloak-poc/security/policy).
 
 
 ## Reporting an issue
 
-If you believe you have discovered a defect in Keycloak, please open [an issue](https://github.com/keycloak/keycloak/issues).
+If you believe you have discovered a defect in Keycloak, please open [an issue](https://github.com/keycloak/keycloak-poc/issues).
 Please remember to provide a good summary, description as well as steps to reproduce the issue.
 
 
@@ -38,7 +39,7 @@ To run Keycloak, download the distribution from our [website](https://www.keyclo
 
 Alternatively, you can use the Docker image by running:
 
-    docker run quay.io/keycloak/keycloak start-dev
+    docker run quay.io/keycloak/keycloak-poc start-dev
     
 For more details refer to the [Keycloak Documentation](https://www.keycloak.org/documentation.html).
 
@@ -65,9 +66,9 @@ Before contributing to Keycloak, please read our [contributing guidelines](CONTR
 
 ## Other Keycloak Projects
 
-* [Keycloak](https://github.com/keycloak/keycloak) - Keycloak Server and Java adapters
-* [Keycloak QuickStarts](https://github.com/keycloak/keycloak-quickstarts) - QuickStarts for getting started with Keycloak
-* [Keycloak Node.js Connect](https://github.com/keycloak/keycloak-nodejs-connect) - Node.js adapter for Keycloak
+* [Keycloak](https://github.com/keycloak/keycloak-poc) - Keycloak Server and Java adapters
+* [Keycloak QuickStarts](https://github.com/keycloak/keycloak-poc-quickstarts) - QuickStarts for getting started with Keycloak
+* [Keycloak Node.js Connect](https://github.com/keycloak/keycloak-poc-nodejs-connect) - Node.js adapter for Keycloak
 
 
 ## License
