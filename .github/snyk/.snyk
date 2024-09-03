@@ -1,4 +1,17 @@
-version: v1.22.2
+version: v1.25.0
+
+include:
+  - license
+
+# Global allowlist of accepted licenses (applies to all dependencies unless overridden)
+licenses:
+  allowed:
+    - MIT
+    - Apache-2.0
+    - BSD-3-Clause
+    - BSD-2-Clause
+    - BSD-3-Clause
+
 ignore:
   SNYK-JAVA-ORGKEYCLOAK-1062507:
     - "*":
