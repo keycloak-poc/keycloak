@@ -4,7 +4,7 @@
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/6818/badge)](https://bestpractices.coreinfrastructure.org/projects/6818)
 ![GitHub Repo stars](https://img.shields.io/github/stars/keycloak/keycloak-poc?style=flat)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/keycloak/keycloak-poc)
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/keycloak/keycloak-poc/badge)](https://scorecard.dev/viewer/?uri=github.com/keycloak/keycloak-poc)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/keycloak-poc/keycloak/badge)](https://scorecard.dev/viewer/?uri=github.com/keycloak-poc/keycloak)
 
 
 # Open Source Identity and Access Management
