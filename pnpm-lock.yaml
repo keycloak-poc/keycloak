@@ -66,8 +66,8 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0(eslint@9.9.1)(typescript@5.5.4)
       wireit:
-        specifier: ^0.14.8
-        version: 0.14.8
+        specifier: ^0.14.9
+        version: 0.14.9
 
   js/apps/account-ui:
     dependencies:
@@ -1023,10 +1023,6 @@ packages:
 
   '@eslint/eslintrc@3.1.0':
     resolution: {integrity: sha512-4Bfj15dVJdoy3RfZmmo86RK1Fwzn6SstsvK9JS+BaVKqC6QQQQyXekNaC+g+LKNgkQ+2VhGAzm6hO40AhMR3zQ==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@eslint/js@9.9.0':
-    resolution: {integrity: sha512-hhetes6ZHP3BlXLxmd8K2SNgkhNSi+UcecbnwWKwpP7kyi/uC75DJ1lOOBO3xrC4jyojtGE3YxKZPHfk4yrgug==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/js@9.9.1':
@@ -5028,8 +5024,8 @@ packages:
     engines: {node: '>=8'}
     hasBin: true
 
-  wireit@0.14.8:
-    resolution: {integrity: sha512-pxRAjRGft/38fOE6CNm6np0spVaXFZIIlF0MF+J6P0zLqWb7CDcNITDxHM7zRe12pIMM0opq4upaOa10IKQ91Q==}
+  wireit@0.14.9:
+    resolution: {integrity: sha512-hFc96BgyslfO1WGSzQqOVYd5N3TB+4u9w70L9GHR/T7SYjvFmeznkYMsRIjMLhPcVabCEYPW1vV66wmIVDs+dQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -5578,8 +5574,6 @@ snapshots:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
-
-  '@eslint/js@9.9.0': {}
 
   '@eslint/js@9.9.1': {}
 
@@ -9983,7 +9977,7 @@ snapshots:
       siginfo: 2.0.0
       stackback: 0.0.2
 
-  wireit@0.14.8:
+  wireit@0.14.9:
     dependencies:
       brace-expansion: 4.0.0
       chokidar: 3.6.0
