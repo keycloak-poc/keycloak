@@ -31,10 +31,10 @@ jobs:
     strategy:
       matrix:
         workflow:
-        - ci.yml
-        - documentation.yml
-        - js-ci.yml
-        - operator-ci.yml
+        #- ci.yml
+        #- documentation.yml
+        #- js-ci.yml
+        #- operator-ci.yml
         - codeql-analysis.yml
         - snyk-analysis.yml
         - trivy-analysis.yml
