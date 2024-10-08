@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    if: github.repository == 'keycloak/keycloak'
+    if: github.repository == 'keycloak-poc/keycloak'
     steps:
       - uses: actions/checkout@v4
 
