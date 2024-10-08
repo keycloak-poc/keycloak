@@ -13,7 +13,7 @@ jobs:
     name: Vulnerability scanner for nightly containers
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      security-events: write
     if: github.repository == 'keycloak-poc/keycloak'
     strategy:
       matrix:
