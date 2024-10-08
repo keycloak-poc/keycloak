@@ -14,6 +14,8 @@ jobs:
   analysis:
     name: Analysis of Quarkus and Operator
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     if: github.repository == 'keycloak/keycloak'
     steps:
       - uses: actions/checkout@v4
