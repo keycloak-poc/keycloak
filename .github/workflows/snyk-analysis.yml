@@ -15,6 +15,9 @@ jobs:
     name: Analysis of Quarkus and Operator
     runs-on: ubuntu-latest
     if: github.repository == 'keycloak-poc/keycloak'
+    concurrency:
+      group: resource-update-${{ github.ref }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
 
