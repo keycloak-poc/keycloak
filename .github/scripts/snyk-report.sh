@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-KEYCLOAK_REPO="keycloak/keycloak"
+KEYCLOAK_REPO="keycloak-poc/keycloak"
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 
 # Extract the version number if BRANCH_NAME contains a slash
