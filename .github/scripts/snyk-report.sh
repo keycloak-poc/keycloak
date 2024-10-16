@@ -61,6 +61,7 @@ create_github_issue() {
         printf "Issue creation failed with status: %s\n" "$http_code"
         exit 1
     fi
+    sleep 10
 }
 
 # Update existing issue based on the branches affected
