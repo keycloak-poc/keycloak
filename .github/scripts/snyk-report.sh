@@ -21,26 +21,26 @@ check_github_issue_exists() {
     if printf "%s" "$response" | jq -e '.message == "Bad credentials"' > /dev/null; then
         printf "Error: Bad credentials\n%s\n" "$response"
         echo "Error: Bad credentials. Aborting script."
-        exit 1
+        return 1
     fi
 
     # Check for rate limiting
     if printf "%s" "$response" | jq -e '.message == "API rate limit exceeded"' > /dev/null; then
         printf "Error: API rate limit exceeded\n%s\n" "$response"
-        exit 1
+        return 1
     fi
 
     # Check if total_count is available
     if [[ $count == "null" ]]; then
         printf "Error: total_count not available in response\n%s\n" "$response"
-        exit 1
+        return 1
     fi
 
     if [[ $count -gt 0 ]]; then
         local issue_id=$(echo "$response" | jq -r '.items[0].number')
         echo "$issue_id"
     else
-        echo "1"
+        return 1
     fi
 }
 
@@ -97,6 +97,7 @@ parse_and_process_vulnerabilities() {
 
         printf -v body "%s\n%s\n%s\n%s" "$title" "$module" "$from_path" "$description"
         issue_id=$(check_github_issue_exists "$cve_title")
+        
         if [[ $issue_id -eq 1 ]]; then
             create_github_issue "$title" "$body"
         else
