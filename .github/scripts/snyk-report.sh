@@ -99,8 +99,8 @@ parse_and_process_vulnerabilities() {
         issue_id=$(check_github_issue_exists "$cve_title")
         if [[ $issue_id -eq 1 ]]; then
             create_github_issue "$title" "$body"
-        else
-            update_github_issue "$issue_id"
+        #else
+        #    update_github_issue "$issue_id"
         fi
     done
 }
