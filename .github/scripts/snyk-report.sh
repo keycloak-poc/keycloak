@@ -61,7 +61,6 @@ create_github_issue() {
         printf "Issue creation failed with status: %s\n" "$http_code"
         exit 1
     fi
-    sleep 10
 }
 
 # Update existing issue based on the branches affected
@@ -98,10 +97,11 @@ parse_and_process_vulnerabilities() {
 
         printf -v body "%s\n%s\n%s\n%s" "$title" "$module" "$from_path" "$description"
         issue_id=$(check_github_issue_exists "$cve_title")
+        sleep 10
         if [[ $issue_id -eq 1 ]]; then
             create_github_issue "$title" "$body"
-        #else
-        #    update_github_issue "$issue_id"
+        else
+            update_github_issue "$issue_id"
         fi
     done
 }
