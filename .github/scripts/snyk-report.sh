@@ -46,7 +46,7 @@ check_github_issue_exists() {
         exit 1
     fi
 
-    if [[ $count -gt 0 ]]; then
+    if [[ "$count" -gt 0 ]]; then
         local issue_id=$(echo "$response" | jq -r '.items[0].number')
         debug "Found existing issue with ID: $issue_id"
         echo "$issue_id"
@@ -70,7 +70,7 @@ create_github_issue() {
     debug "GitHub API response: $response"
     local http_code=$(echo "$response" | tail -n1)
 
-    if [[ $http_code -eq 201 ]]; then
+    if [[ "$http_code" -eq 201 ]]; then
         debug "Issue created successfully"
         return 0
     else
@@ -95,7 +95,7 @@ update_github_issue() {
     debug "GitHub API response: $response"
     local http_code=$(echo "$response" | tail -n1)
 
-    if [[ $http_code -eq 200 ]]; then
+    if [[ "$http_code" -eq 200 ]]; then
         debug "Issue updated successfully"
         return 0
     else
@@ -122,7 +122,7 @@ parse_and_process_vulnerabilities() {
         debug "Processing vulnerability: $title"
         printf -v body "%s\n%s\n%s\n%s" "$title" "$module" "$from_path" "$description"
         issue_id=$(check_github_issue_exists "$cve_title")
-        if [[ $issue_id -eq 1 ]]; then
+        if [[ "$issue_id" == "1" ]]; then
             debug "No existing issue found, creating a new one"
             create_github_issue "$title" "$body"
         else
