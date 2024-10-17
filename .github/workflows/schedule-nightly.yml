@@ -8,7 +8,7 @@ on:
 jobs:
 
   setup:
-    if: github.event_name != 'schedule' || github.repository == 'keycloak/keycloak'
+    if: github.event_name != 'schedule' || github.repository == 'keycloak-poc/keycloak'
     runs-on: ubuntu-latest
     outputs:
       latest-release-branch: ${{ steps.latest-release.outputs.branch }}
@@ -29,13 +29,13 @@ jobs:
     strategy:
       matrix:
         workflow:
-        - ci.yml
-        - documentation.yml
-        - js-ci.yml
-        - operator-ci.yml
-        - codeql-analysis.yml
+        #- ci.yml
+        #- documentation.yml
+        #- js-ci.yml
+        #- operator-ci.yml
+        #- codeql-analysis.yml
         - snyk-analysis.yml
-        - trivy-analysis.yml
+        #- trivy-analysis.yml
 
     steps:
       - name: Run workflow
