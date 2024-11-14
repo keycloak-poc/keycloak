@@ -8,22 +8,33 @@ defaults:
     shell: bash
 
 jobs:
-
   analysis:
     name: Vulnerability scanner for nightly containers
     runs-on: ubuntu-latest
-    if: github.repository == 'keycloak/keycloak'
+    if: github.repository == 'keycloak-poc/keycloak'
     strategy:
       matrix:
         container: [keycloak, keycloak-operator]
       fail-fast: false
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Authenticate to GitHub Container Registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Cache Trivy DB
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/trivy
+          key: ${{ runner.os }}-trivy-db
+
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@6e7b7d1fd3e4fef0c5fa8cce1229c54b2c9bd0d8
+        uses: aquasecurity/trivy-action@v0.43.1
         with:
           image-ref: quay.io/keycloak/${{ matrix.container}}:nightly
           format: sarif
-          output: trivy-results.sarif
+          output: trivy-results-${{ matrix.container }}.sarif
           severity: MEDIUM,CRITICAL,HIGH
           ignore-unfixed: true
           timeout: 15m
@@ -31,5 +42,5 @@ jobs:
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: trivy-results.sarif
-          category: ${{ matrix.container}}
+          sarif_file: trivy-results-${{ matrix.container }}.sarif
+          category: ${{ matrix.container }}
