@@ -30,7 +30,7 @@ jobs:
           key: ${{ runner.os }}-trivy-db
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@ee8934673cc18947baf4b05c01c4100ff36648da
+        uses: aquasecurity/trivy-action@93941cebba762da4c91a91883859bf1bfb221c73
         with:
           image-ref: quay.io/keycloak/${{ matrix.container}}:nightly
           format: sarif
