@@ -11,7 +11,7 @@ jobs:
   analysis:
     name: Vulnerability scanner for release containers
     runs-on: ubuntu-latest
-    if: github.repository == 'keycloak/keycloak'
+    if: github.repository == 'keycloak-poc/keycloak'
     strategy:
       matrix:
         container: [keycloak, keycloak-operator]
