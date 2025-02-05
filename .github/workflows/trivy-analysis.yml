@@ -18,7 +18,9 @@ jobs:
       fail-fast: false
     steps:
       - name: Set VERSION from branch name
-        run: echo "VERSION=${GITHUB_REF#refs/heads/release/}" >> $GITHUB_ENV
+        run: |
+          echo "VERSION=${GITHUB_REF#refs/heads/release/}" >> $GITHUB_ENV
+          echo "quay.io/keycloak/${{ matrix.container }}:${{ env.VERSION }}"
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@6e7b7d1fd3e4fef0c5fa8cce1229c54b2c9bd0d8
