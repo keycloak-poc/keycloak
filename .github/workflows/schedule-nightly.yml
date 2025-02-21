@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  actions: write  # Required to trigger workflows
 
 jobs:
 
@@ -39,9 +40,6 @@ jobs:
         - codeql-analysis.yml
         - snyk-analysis.yml
         - trivy-analysis.yml
-
-    permissions:
-      actions: write  # Required to trigger workflows
 
     steps:
       - name: Run workflow
