@@ -18,6 +18,8 @@ jobs:
     name: Analysis of Quarkus and Operator
     runs-on: ubuntu-latest
     if: github.repository == 'keycloak-poc/keycloak'
+    permissions:
+      security-events: write #Required for SARIF uploads
     steps:
       - uses: actions/checkout@v4
 
