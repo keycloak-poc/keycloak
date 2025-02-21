@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: write  # Required to trigger workflows
-
+      contents: write
     outputs:
       latest-release-branch: ${{ steps.latest-release.outputs.branch }}
     steps:
