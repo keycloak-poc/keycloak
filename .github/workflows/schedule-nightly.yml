@@ -7,13 +7,14 @@ on:
 
 permissions:
   contents: read
-  actions: write  # Required to trigger workflows
 
 jobs:
 
   setup:
     if: github.event_name != 'schedule' || github.repository == 'keycloak-poc/keycloak'
     runs-on: ubuntu-latest
+    actions: write  # Required to trigger workflows
+
     outputs:
       latest-release-branch: ${{ steps.latest-release.outputs.branch }}
     steps:
