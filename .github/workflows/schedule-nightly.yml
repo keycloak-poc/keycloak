@@ -40,6 +40,9 @@ jobs:
         - snyk-analysis.yml
         - trivy-analysis.yml
 
+    permissions:
+      actions: write  # Required to trigger workflows
+
     steps:
       - name: Run workflow
         run: gh workflow run -R ${{ github.repository }} ${{ matrix.workflow }}
