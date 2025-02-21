@@ -14,10 +14,13 @@ concurrency:
   group: quarkus-next-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  
 jobs:
   update-quarkus-next-branch:
     name: Update quarkus-next branch
-    if: github.event_name != 'schedule' || github.repository == 'keycloak/keycloak'
+    if: github.event_name != 'schedule' || github.repository == 'keycloak-poc/keycloak'
     runs-on: ubuntu-latest
 
     steps:
