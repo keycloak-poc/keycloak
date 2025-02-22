@@ -219,7 +219,7 @@
         </surefire.system.args>
 
         <!-- webauthn support -->
-        <webauthn4j.version>0.21.5.RELEASE</webauthn4j.version>
+        <webauthn4j.version>0.28.4.RELEASE</webauthn4j.version>
         <org.apache.kerby.kerby-asn1.version>2.0.3</org.apache.kerby.kerby-asn1.version>
 
         <!-- Used to test SAML Galleon feature-pack layers discovery -->
@@ -276,7 +276,7 @@
         </developer>
     </developers>
 
-    <contributors></contributors>
+    <contributors/>
 
     <modules>
         <module>boms</module>
