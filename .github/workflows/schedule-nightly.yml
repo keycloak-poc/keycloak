@@ -40,7 +40,7 @@ jobs:
         - js-ci.yml
         - operator-ci.yml
         - codeql-analysis.yml
-        - snyk-analysis.yml
+        #- snyk-analysis.yml
         - trivy-analysis.yml
 
     steps:
