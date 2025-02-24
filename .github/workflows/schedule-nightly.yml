@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: write
+      contents: write
     outputs:
       latest-release-branch: ${{ steps.latest-release.outputs.branch }}
     steps:
