@@ -40,7 +40,7 @@ jobs:
         - js-ci.yml
         - operator-ci.yml
         - codeql-analysis.yml
-        #- snyk-analysis.yml
+        - snyk-analysis.yml
         - trivy-analysis.yml
 
     steps:
@@ -55,6 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: write
+      contents: read
     strategy:
       matrix:
         workflow:
