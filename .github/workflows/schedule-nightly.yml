@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: write
-      contents: write
     outputs:
       latest-release-branch: ${{ steps.latest-release.outputs.branch }}
     steps:
@@ -46,24 +45,5 @@ jobs:
     steps:
       - name: Run workflow
         run: gh workflow run -R ${{ github.repository }} ${{ matrix.workflow }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  run-latest-release-branch:
-    name: Run latest release branch
-    needs: setup
-    runs-on: ubuntu-latest
-    permissions:
-      actions: write
-      contents: write
-    strategy:
-      matrix:
-        workflow:
-          - snyk-analysis.yml
-
-    steps:
-      - run: echo ${{ needs.setup.outputs.latest-release-branch }}
-      - name: Run workflow
-        run: gh workflow run -R ${{ github.repository }} ${{ matrix.workflow }} --ref ${{ needs.setup.outputs.latest-release-branch }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
