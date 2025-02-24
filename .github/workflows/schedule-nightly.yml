@@ -13,7 +13,7 @@ jobs:
     if: github.event_name != 'schedule' || github.repository == 'keycloak-poc/keycloak'
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      actions: write
     outputs:
       latest-release-branch: ${{ steps.latest-release.outputs.branch }}
     steps:
