@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: write
-      contents: read
+      contents: write
     strategy:
       matrix:
         workflow:
