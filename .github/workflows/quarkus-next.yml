@@ -46,6 +46,8 @@ jobs:
   run-matrix-with-quarkus-next:
     name: Run workflow matrix with the quarkus-next branch
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
     needs:
       - update-quarkus-next-branch
 
