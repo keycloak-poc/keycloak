@@ -8,14 +8,14 @@ on:
 jobs:
 
   setup:
-    if: github.event_name != 'schedule' || github.repository == 'keycloak/keycloak'
+    if: github.event_name != 'schedule' || github.repository == 'keycloak-poc/keycloak'
     runs-on: ubuntu-latest
     outputs:
       latest-release-branch: ${{ steps.latest-release.outputs.branch }}
     steps:
       - id: latest-release
         run: |
-          branch="release/$(gh api repos/keycloak/keycloak/branches | jq -r '.[].name' | sort -r | awk -F'/' '/[0-9.]+$/ {print $NF; exit}')"
+          branch="release/$(gh api repos/keycloak-poc/keycloak/branches | jq -r '.[].name' | sort -r | awk -F'/' '/[0-9.]+$/ {print $NF; exit}')"
           echo "branch=$branch"
           echo "branch=$branch" >> "$GITHUB_OUTPUT"
         env:
@@ -29,13 +29,13 @@ jobs:
     strategy:
       matrix:
         workflow:
-        - ci.yml
-        - documentation.yml
-        - js-ci.yml
-        - operator-ci.yml
-        - codeql-analysis.yml
+        #- ci.yml
+        #- documentation.yml
+        #- js-ci.yml
+        #- operator-ci.yml
+        #- codeql-analysis.yml
         - snyk-analysis.yml
-        - trivy-analysis.yml
+        #- trivy-analysis.yml
 
     steps:
       - name: Run workflow

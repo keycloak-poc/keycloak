@@ -12,7 +12,7 @@ jobs:
   analysis:
     name: Vulnerability scanner for nightly containers
     runs-on: ubuntu-latest
-    if: github.repository == 'keycloak/keycloak'
+    if: github.repository == 'keycloak-poc/keycloak'
     strategy:
       matrix:
         container: [keycloak, keycloak-operator]
