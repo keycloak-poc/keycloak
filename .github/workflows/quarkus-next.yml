@@ -22,7 +22,8 @@ jobs:
     name: Update quarkus-next branch
     if: github.event_name != 'schedule' || github.repository == 'keycloak-poc/keycloak'
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
