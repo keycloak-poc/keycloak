@@ -1,8 +1,7 @@
 ###################################################################################################
 # Overview
 #
-# Pattern used to match files follows most of the same rules as used in gitignore files. Order is
-# important; the last matching pattern takes precendence.
+# Pattern used to match files follows most of the same rules as udg pattern takes precendence.
 #
 # For more info see:
 # https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
