@@ -3,14 +3,15 @@ on:
   pull_request_target:
     types: closed
 
+permissions:
+  contents: read
+  
 jobs:
   label:
 
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      issues: write
-
+      pull-requests: write # Required to add labels to pull-requests
     steps:
       - uses: actions/checkout@v4
         with:
@@ -54,6 +55,6 @@ jobs:
             gh issue edit "$ISSUE" -R "$GITHUB_REPOSITORY" --add-label "$LABEL" --remove-label "$BACKPORT_LABEL"
             echo "* [$ISSUE](https://github.com/$GITHUB_REPOSITORY/issues/$ISSUE)" >> $GITHUB_STEP_SUMMARY
           done
-        if: github.repository	== 'keycloak/keycloak' && github.event_name == 'pull_request_target' && github.event.action == 'closed' && github.event.pull_request.merged == true
+        if: github.repository	== 'keycloak-poc/keycloak' && github.event_name == 'pull_request_target' && github.event.action == 'closed' && github.event.pull_request.merged == true
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
