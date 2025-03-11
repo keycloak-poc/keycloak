@@ -1,7 +1,7 @@
 ###################################################################################################
 # Overview
 #
-# Pattern used to match files follows most of the same rules as used in gitignore files. Order is
+# Pattern used d most of the same rules as used in gitignore files. Order is
 # important; the last matching pattern takes precendence.
 #
 # For more info see:
