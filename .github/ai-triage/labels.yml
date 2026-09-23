@@ -1,0 +1,40 @@
+# Rules for .github/workflows/ai-label-actions.yml
+#
+# Each top-level key is a label name. When that label is added to an issue, the
+# matching rule runs. Labels with no rule here are ignored.
+#
+#   action:  comment      post the text as a new issue comment
+#            update-body  append the text to the issue body, inside markers, so
+#                         re-applying the label replaces it instead of stacking
+#
+#   static:  fixed text, posted as-is. Costs no AI credits.
+#   prompt:  sent to Copilot along with the issue title and body. Costs credits.
+#
+# Give each rule exactly one of static or prompt.
+
+"kind/cve":
+  action: comment
+  static: "yes it is a CVE"
+
+"action/upstream":
+  action: update-body
+  prompt: |
+    Summarize this issue for upstream Keycloak maintainers who have not seen it
+    before. Write three to five plain sentences covering what the reporter
+    observes, what they expected instead, and anything a maintainer would still
+    need in order to act on it. No headings, no bullet points.
+
+# Further examples. Uncomment to enable.
+#
+# "action/missing-info":
+#   action: comment
+#   prompt: |
+#     List, as short bullet points, exactly which pieces of information this
+#     issue is missing before a maintainer could reproduce it. Ask only for
+#     things that are genuinely absent.
+#
+# "kind/bug":
+#   action: comment
+#   prompt: |
+#     Name the one or two Keycloak modules most likely responsible, and say in a
+#     sentence why. If the report is too vague to tell, say exactly that.
